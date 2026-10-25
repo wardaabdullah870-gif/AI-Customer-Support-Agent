@@ -1,0 +1,414 @@
+
+:root {
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: #182230;
+  background: #f3f6fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f3f6fb;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 28px;
+  padding: 32px;
+  background:
+    radial-gradient(ellipse at top left, #e1eaff 0, transparent 45%),
+    #f3f6fb;
+}
+
+/* Chat panel */
+
+.chat-card {
+  width: 100%;
+  max-width: 760px;
+  min-width: 0;
+  min-height: 680px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e3e9f2;
+  border-radius: 22px;
+  box-shadow: 0 18px 55px rgb(28 48 85 / 8%);
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 22px 26px;
+  border-bottom: 1px solid #edf0f5;
+  background: #fff;
+}
+
+.brand-icon,
+.avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #fff;
+  background: #315ce8;
+  font-weight: 700;
+}
+
+.brand-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  font-size: 14px;
+}
+
+.brand-info h1 {
+  margin: 0;
+  font-size: 19px;
+  letter-spacing: -0.5px;
+}
+
+.brand-info p {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 5px 0 0;
+  color: #748094;
+  font-size: 13px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22b573;
+}
+
+.header-label {
+  margin-left: auto;
+  padding: 9px 13px;
+  color: #315ce8;
+  background: #eef2ff;
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.welcome-panel {
+  padding: 30px 28px 14px;
+}
+
+.eyebrow {
+  color: #315ce8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.welcome-panel h2 {
+  margin: 10px 0;
+  color: #182230;
+  font-size: clamp(25px, 4vw, 34px);
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.welcome-panel p {
+  max-width: 500px;
+  margin: 0;
+  color: #758095;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 190px;
+  max-height: 360px;
+  overflow-y: auto;
+  padding: 20px 28px;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.message-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.user-row {
+  justify-content: flex-end;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  font-size: 10px;
+}
+
+.message-bubble {
+  max-width: 82%;
+  padding: 13px 16px;
+  border-radius: 5px 16px 16px 16px;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.message-bubble.assistant {
+  color: #364256;
+  background: #f2f5fa;
+}
+
+.message-bubble.user {
+  color: #fff;
+  background: #315ce8;
+  border-radius: 16px 5px 16px 16px;
+}
+
+.typing {
+  color: #758095;
+  font-style: italic;
+}
+
+.error-message {
+  margin: 0 28px 12px;
+  padding: 10px 12px;
+  color: #b42318;
+  background: #fff1f0;
+  border: 1px solid #ffd4d0;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 28px;
+}
+
+.suggestions button {
+  padding: 10px 13px;
+  color: #4a5c7a;
+  background: #fff;
+  border: 1px solid #dfe5ef;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.suggestions button:hover {
+  background: #f3f6ff;
+  border-color: #aabcf8;
+}
+
+.message-form {
+  display: flex;
+  gap: 10px;
+  margin: 8px 28px 0;
+  padding: 8px;
+  border: 1px solid #dfe5ef;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.message-form:focus-within {
+  border-color: #8aa5ff;
+  box-shadow: 0 0 0 3px rgb(49 92 232 / 8%);
+}
+
+.message-form input {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  padding: 10px;
+  color: #182230;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-size: 13px;
+}
+
+.message-form button {
+  padding: 0 22px;
+  color: #fff;
+  background: #315ce8;
+  border: 0;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.message-form button:hover:not(:disabled) {
+  background: #2449c4;
+}
+
+.chat-footer {
+  margin-top: auto;
+  padding: 18px 20px;
+  color: #8a94a6;
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* General dashboard and form styling */
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.3;
+}
+
+input,
+textarea,
+select {
+  max-width: 100%;
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+textarea,
+select {
+  border-radius: 10px;
+}
+
+button:not(.message-form button):not(.suggestions button) {
+  border-radius: 9px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 13px 15px;
+  border-bottom: 1px solid #edf0f5;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: #667085;
+  background: #f8faff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+td {
+  color: #344054;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+  }
+
+  .chat-card {
+    max-width: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .app-shell {
+    gap: 16px;
+    padding: 0;
+  }
+
+  .chat-card {
+    min-height: 100vh;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .chat-header {
+    padding: 18px;
+  }
+
+  .brand-info h1 {
+    font-size: 17px;
+  }
+
+  .welcome-panel {
+    padding: 24px 20px 12px;
+  }
+
+  .welcome-panel h2 {
+    font-size: 27px;
+  }
+
+  .messages {
+    padding: 18px 20px;
+  }
+
+  .message-bubble {
+    max-width: 88%;
+    font-size: 13px;
+  }
+
+  .suggestions {
+    padding: 12px 20px;
+  }
+
+  .message-form {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .header-label {
+    display: none;
+  }
+
+  th,
+  td {
+    padding: 10px 8px;
+  }
+}
