@@ -639,3 +639,607 @@ body,
     gap: 8px;
   }
 }
+
+
+/* ==========================================
+   MODERN DARK AI THEME
+   Keeps existing application functionality
+   ========================================== */
+
+:root {
+  color-scheme: dark;
+  --dark-bg: #0b1020;
+  --dark-panel: #11182b;
+  --dark-card: #151e33;
+  --dark-border: #28344d;
+  --dark-text: #edf2ff;
+  --dark-muted: #98a6c2;
+  --dark-blue: #6685ff;
+  --dark-violet: #9b8aff;
+}
+
+html,
+body,
+#root,
+.app-layout,
+.main-area {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.app-layout {
+  min-height: 100vh;
+}
+
+.app-sidebar {
+  background: linear-gradient(180deg, #10172a, #0d1425);
+  border-right: 1px solid var(--dark-border);
+  box-shadow: 8px 0 35px #00000018;
+}
+
+.sidebar-brand strong,
+.sidebar-bottom strong {
+  color: var(--dark-text);
+}
+
+.sidebar-brand span,
+.sidebar-bottom span:not(.online-indicator) {
+  color: var(--dark-muted);
+}
+
+.sidebar-label {
+  color: #7888a8;
+}
+
+.brand-icon {
+  background: linear-gradient(135deg, #6685ff, #9b72f8);
+  box-shadow: 0 6px 25px #6685ff35;
+}
+
+.nav-item {
+  color: #aab7d0;
+  border-color: transparent;
+}
+
+.nav-item:hover {
+  color: #fff;
+  background: #202b45;
+}
+
+.nav-item.active {
+  color: #fff;
+  background: linear-gradient(100deg, #293960, #242543);
+  border-color: #455b8a;
+  box-shadow: inset 3px 0 #9b8aff;
+}
+
+.nav-symbol {
+  color: #bdc9e4;
+  background: #202b43;
+}
+
+.nav-item.active .nav-symbol {
+  color: #fff;
+  background: linear-gradient(135deg, #6685ff, #9276f5);
+}
+
+.sidebar-bottom {
+  border-color: var(--dark-border);
+}
+
+.topbar {
+  background: #10172a;
+  border-color: var(--dark-border);
+}
+
+.topbar h1 {
+  color: #f2f5ff;
+}
+
+.topbar-eyebrow,
+.eyebrow {
+  color: #9b9aff;
+}
+
+.topbar-status {
+  color: #b9c7df;
+  background: #18233a;
+  border-color: #303d59;
+}
+
+.page-intro h2,
+.dashboard-welcome h2 {
+  color: #f0f3ff;
+}
+
+.page-intro p,
+.dashboard-welcome p,
+.section-heading p {
+  color: var(--dark-muted);
+}
+
+.chat-card,
+.support-request-form,
+.requests-section,
+.dashboard-stat,
+.request-card {
+  color: var(--dark-text);
+  background: linear-gradient(145deg, #151e33, #11192b);
+  border-color: var(--dark-border);
+  box-shadow: 0 12px 35px #00000020;
+}
+
+.chat-header {
+  background: #151e33;
+  border-color: var(--dark-border);
+}
+
+.brand-info h2,
+.section-heading h3,
+.request-card-header h3 {
+  color: #f0f3ff;
+}
+
+.brand-info p,
+.dashboard-stat p,
+.dashboard-stat small,
+.request-card-header p {
+  color: var(--dark-muted);
+}
+
+.header-label {
+  color: #b8b1ff;
+  background: #292746;
+  border: 1px solid #47416e;
+}
+
+.messages {
+  background:
+    radial-gradient(ellipse at top left, #252449 0%, transparent 55%),
+    #101729;
+  scrollbar-color: #465575 transparent;
+}
+
+.message-bubble.assistant {
+  color: #dbe4f7;
+  background: #202b43;
+  border-color: #303e5a;
+}
+
+.message-bubble.user {
+  color: #fff;
+  background: linear-gradient(135deg, #547bff, #805ee8);
+  box-shadow: 0 5px 18px #665cff30;
+}
+
+.avatar {
+  background: linear-gradient(135deg, #6685ff, #9b72f8);
+}
+
+.chat-tools {
+  background: #151e33;
+  border-color: var(--dark-border);
+}
+
+.field-section-title {
+  color: #dce5fa;
+}
+
+.suggestions button {
+  color: #bdc9e1;
+  background: #19243a;
+  border-color: #34415d;
+}
+
+.suggestions button:hover {
+  color: #fff;
+  background: #273455;
+  border-color: #788aff;
+}
+
+.order-details label,
+.request-form-grid label,
+.status-control label {
+  color: #b8c5dc;
+}
+
+.order-details input,
+.request-form-grid select,
+.request-form-grid textarea,
+.status-control select,
+.message-form {
+  color: #edf2ff;
+  background: #0f1729;
+  border-color: #34415b;
+}
+
+.order-details input::placeholder,
+.message-form input::placeholder,
+.request-form-grid textarea::placeholder {
+  color: #7888a6;
+}
+
+.order-details input:focus,
+.request-form-grid select:focus,
+.request-form-grid textarea:focus,
+.status-control select:focus,
+.message-form:focus-within {
+  border-color: #7c8fff;
+  box-shadow: 0 0 0 3px #6685ff20;
+}
+
+.message-form input {
+  color: #edf2ff;
+}
+
+.message-form button,
+.primary-button {
+  color: #fff;
+  background: linear-gradient(135deg, #6685ff, #805ee8);
+  border-color: #7484ff;
+  box-shadow: 0 5px 16px #6685ff25;
+}
+
+.message-form button:hover:not(:disabled),
+.primary-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #7d97ff, #9678f4);
+  border-color: #9b8aff;
+}
+
+.chat-footer {
+  color: #8292b1;
+  background: #101729;
+  border-color: var(--dark-border);
+}
+
+.dashboard-stat {
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+.dashboard-stat:hover,
+.request-card:hover {
+  border-color: #52648b;
+  transform: translateY(-2px);
+}
+
+.dashboard-stat strong {
+  color: #f3f5ff;
+}
+
+.stat-icon.total {
+  color: #9db1ff;
+  background: #26345a;
+}
+
+.stat-icon.open {
+  color: #ffd48a;
+  background: #40331f;
+}
+
+.stat-icon.progress {
+  color: #81d5ff;
+  background: #19364b;
+}
+
+.stat-icon.resolved {
+  color: #75e3b5;
+  background: #193b34;
+}
+
+.section-heading {
+  border-color: var(--dark-border);
+}
+
+.request-count {
+  color: #c1cce2;
+  background: #202b42;
+  border-color: #34415b;
+}
+
+.request-card-header {
+  border-color: var(--dark-border);
+}
+
+.request-reference,
+.request-details-grid span,
+.request-description > span {
+  color: #8e9db9;
+}
+
+.request-details-grid strong {
+  color: #d3def2;
+}
+
+.request-description {
+  background: #10182a;
+  border-color: #2c3952;
+}
+
+.request-description p {
+  color: #c2cee3;
+}
+
+.request-status {
+  color: #ffd68b;
+  background: #40331f;
+}
+
+.status-in-progress {
+  color: #8bd8ff;
+  background: #19364b;
+}
+
+.status-resolved {
+  color: #79e4b7;
+  background: #193b34;
+}
+
+.empty-state {
+  color: #a1b0ca;
+  background: #10182a;
+  border-color: #34415b;
+}
+
+.empty-state strong {
+  color: #eef2ff;
+}
+
+.alert-message,
+.error-message {
+  color: #ffaaa8;
+  background: #3a202c;
+  border-color: #713747;
+}
+
+.success-message {
+  color: #87e7b9;
+  background: #16372f;
+  border-color: #285b4b;
+}
+
+.security-note {
+  color: #ffd48a;
+}
+
+.admin-login-page {
+  color: var(--dark-text);
+  background:
+    radial-gradient(ellipse at 20% 15%, #27264d 0%, transparent 42%),
+    radial-gradient(ellipse at 85% 85%, #1b3154 0%, transparent 40%),
+    #0b1020;
+}
+
+.admin-login-card {
+  color: var(--dark-text);
+  background: #151e33;
+  border-color: #34415b;
+  box-shadow: 0 25px 80px #00000040;
+}
+
+.admin-login-brand strong,
+.admin-login-card h1 {
+  color: #f1f4ff;
+}
+
+.admin-login-brand span,
+.admin-login-description,
+.admin-login-footnote {
+  color: #a2b0ca;
+}
+
+.admin-login-form label {
+  color: #d0dbef;
+}
+
+.admin-login-form input {
+  color: #edf2ff;
+  background: #0f1729;
+  border-color: #34415b;
+}
+
+.admin-login-form input:focus {
+  border-color: #7c8fff;
+  box-shadow: 0 0 0 3px #6685ff20;
+}
+
+.back-to-chat-button {
+  color: #a9b5ff;
+}
+
+.logout-button {
+  color: #dbe4f7;
+  background: #1a2540;
+  border-color: #394763;
+}
+
+.logout-button:hover {
+  color: #fff;
+  background: #273455;
+  border-color: #788aff;
+}
+
+@media (max-width: 720px) {
+  .app-sidebar {
+    background: #10172a;
+    border-bottom-color: var(--dark-border);
+  }
+
+  .topbar {
+    background: #10172a;
+  }
+
+  .dashboard-stat {
+    background: #151e33;
+  }
+}
+
+
+/* Fix: apply dark backgrounds to the entire workspace */
+
+html,
+body,
+#root,
+.app-layout,
+.main-area,
+.content-area {
+  background-color: #0b1020 !important;
+  color: #edf2ff;
+}
+
+.topbar,
+.chat-card,
+.chat-header,
+.chat-tools,
+.support-request-form,
+.requests-section,
+.dashboard-stat,
+.request-card {
+  background: #151e33 !important;
+  color: #edf2ff !important;
+  border-color: #28344d !important;
+}
+
+.messages {
+  background: #101729 !important;
+}
+
+.chat-footer {
+  background: #101729 !important;
+  color: #98a6c2 !important;
+  border-color: #28344d !important;
+}
+
+.page-intro h2,
+.dashboard-welcome h2,
+.topbar h1,
+.brand-info h2,
+.section-heading h3,
+.request-card-header h3,
+.dashboard-stat strong {
+  color: #edf2ff !important;
+}
+
+.page-intro p,
+.dashboard-welcome p,
+.brand-info p,
+.dashboard-stat p,
+.dashboard-stat small,
+.request-card-header p {
+  color: #98a6c2 !important;
+}
+
+.message-bubble.assistant {
+  background: #202b43 !important;
+  color: #dbe4f7 !important;
+  border-color: #34415b !important;
+}
+
+.order-details input,
+.request-form-grid select,
+.request-form-grid textarea,
+.status-control select,
+.message-form {
+  background: #0f1729 !important;
+  color: #edf2ff !important;
+  border-color: #34415b !important;
+}
+
+.message-form input {
+  background: transparent !important;
+  color: #edf2ff !important;
+}
+
+.request-description,
+.empty-state {
+  background: #101729 !important;
+  color: #dbe4f7 !important;
+  border-color: #34415b !important;
+}
+
+.request-description p,
+.request-details-grid strong {
+  color: #dbe4f7 !important;
+}
+
+/* Modern Dark AI - final colour refinements */
+
+.app-layout,
+.main-area,
+.content-area {
+  background-color: #0b1020 !important;
+  color: #edf2ff;
+}
+
+.app-sidebar {
+  background: #080d1a !important;
+  border-right: 1px solid #202b43;
+}
+
+.topbar {
+  background: #0d1426 !important;
+  border-bottom: 1px solid #202b43;
+}
+
+.chat-card,
+.dashboard-stat,
+.request-card,
+.support-request-form,
+.requests-section {
+  background: #151e33 !important;
+  border: 1px solid #293653 !important;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+.chat-header {
+  background: #151e33 !important;
+  border-bottom: 1px solid #293653;
+}
+
+.messages {
+  background: #0f1729 !important;
+}
+
+.message-bubble.assistant {
+  background: #202b43 !important;
+  color: #edf2ff !important;
+  border: 1px solid #34415b;
+  border-radius: 14px;
+}
+
+.message-bubble.user {
+  background: linear-gradient(135deg, #5145cd, #3568e8) !important;
+  color: #ffffff !important;
+  border-radius: 14px;
+}
+
+button,
+.nav-item.active {
+  background: linear-gradient(135deg, #5145cd, #3568e8);
+  color: #ffffff;
+}
+
+input,
+textarea,
+select {
+  background-color: #0d1426 !important;
+  color: #edf2ff !important;
+  border-color: #34415b !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #8492ad !important;
+}
+
+.page-intro h2,
+.topbar h1,
+.dashboard-welcome h2 {
+  color: #f4f6ff !important;
+}
+
+.page-intro p,
+.dashboard-welcome p,
+.chat-footer {
+  color: #9ba9c4 !important;
+}
