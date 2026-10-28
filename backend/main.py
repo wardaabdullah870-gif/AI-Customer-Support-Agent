@@ -33,13 +33,14 @@ app = FastAPI(
 )
 
 
-# Allow the local React frontend to communicate with the backend.
+# Allow the local React frontend and deployed Vercel frontends to communicate with the backend.
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
         "https://ai-customer-support-agent-phi.vercel.app",
+        "https://ai-customer-support-agent-cm6ejn5hb-student-management9.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -401,3 +402,6 @@ def update_support_status(
         "request_id": request_id,
         "status": request.status,
     }
+
+
+
